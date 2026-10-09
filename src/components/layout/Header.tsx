@@ -1,6 +1,10 @@
 import { Sprout } from 'lucide-react';
 import { NavLink } from "react-router"
 
+const navClass = ({ isActive }: { isActive: boolean }) => {
+    return `text-sm text-foreground hover:text-primary hover:underline underline-offset-8 decoration-primary ${isActive ? "text-primary underline underline-offset-8 decoration-primary" : ''}`;
+}
+    
 const Header = () => {
     return (
                 <header className='flex items-center justify-between px-[5em] py-[2em]'>
@@ -14,11 +18,7 @@ const Header = () => {
                             <li>
                                 <NavLink 
                                     to="/" 
-                                    className={({ isActive }) =>
-                                        "decoration-primary underline-offset-8 text-sm" + 
-                                        isActive ? "text-primary underline " :
-                                        "text-foreground hover:text-primary hover:underline"
-                                    }
+                                    className={navClass}
                                 >
                                     Home
                                 </NavLink>
@@ -26,11 +26,7 @@ const Header = () => {
                             <li>
                                 <NavLink 
                                     to="/services" 
-                                    className={({ isActive }) =>
-                                        "decoration-primary underline-offset-8 text-sm" + 
-                                        isActive ? "text-primary underline " :
-                                        "text-foreground hover:text-primary hover:underline"
-                                    }
+                                    className={navClass}
                                 >
                                     Services
                                 </NavLink>
