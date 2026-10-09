@@ -1,23 +1,24 @@
 import { Sprout } from 'lucide-react';
-import { NavLink } from "react-router"
+import { Link, NavLink } from "react-router"
 
+const navClass = ({ isActive }: { isActive: boolean }) => {
+    return `text-sm text-foreground hover:text-primary hover:underline underline-offset-8 decoration-primary ${isActive ? "text-primary underline underline-offset-8 decoration-primary" : ''}`;
+}
+    
 const Header = () => {
     return (
                 <header className='flex items-center justify-between px-[5em] py-[2em]'>
-                    <a href="/" className='text-3xl flex items-center gap-[.5em] brand-logo'>
+                    <Link to="/" className='text-3xl flex items-center gap-[.5em] brand-logo'>
                         <Sprout size={30}/>
                         <span aria-label='logo-name'>bloom&breath</span>
-                    </a>
+                    </Link>
 
                     <nav aria-label="Main Navigation">
                         <ul className='flex gap-[1em] items-center'>
                             <li>
                                 <NavLink 
                                     to="/" 
-                                    className={({ isActive }) =>
-                                        isActive ? "text-primary underline underline-offset-8 decoration-primary" :
-                                        "text-foreground hover:text-primary hover:underline underline-offset-8 decoration-primary"
-                                    }
+                                    className={navClass}
                                 >
                                     Home
                                 </NavLink>
@@ -25,10 +26,7 @@ const Header = () => {
                             <li>
                                 <NavLink 
                                     to="/services" 
-                                    className={({ isActive }) =>
-                                        isActive ? "text-primary underline underline-offset-8 decoration-primary" : 
-                                        "text-foreground hover:text-primary hover:underline underline-offset-8 decoration-primary"
-                                    }
+                                    className={navClass}
                                 >
                                     Services
                                 </NavLink>
