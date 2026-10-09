@@ -15,8 +15,9 @@ const Header = () => {
                                 <NavLink 
                                     to="/" 
                                     className={({ isActive }) =>
-                                        isActive ? "text-primary underline underline-offset-8 decoration-primary" :
-                                        "text-foreground hover:text-primary hover:underline underline-offset-8 decoration-primary"
+                                        "decoration-primary underline-offset-8 text-sm" + 
+                                        isActive ? "text-primary underline " :
+                                        "text-foreground hover:text-primary hover:underline"
                                     }
                                 >
                                     Home
@@ -26,8 +27,9 @@ const Header = () => {
                                 <NavLink 
                                     to="/services" 
                                     className={({ isActive }) =>
-                                        isActive ? "text-primary underline underline-offset-8 decoration-primary" : 
-                                        "text-foreground hover:text-primary hover:underline underline-offset-8 decoration-primary"
+                                        "decoration-primary underline-offset-8 text-sm" + 
+                                        isActive ? "text-primary underline " :
+                                        "text-foreground hover:text-primary hover:underline"
                                     }
                                 >
                                     Services
