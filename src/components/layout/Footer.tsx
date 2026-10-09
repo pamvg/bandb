@@ -1,5 +1,5 @@
 import { ArrowUpRight } from 'lucide-react';
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
 
 const navClass = ({ isActive }: { isActive: boolean }) => {
     return `text-sm text-foreground hover:text-primary hover:underline underline-offset-8 decoration-primary ${isActive ? "text-primary underline underline-offset-8 decoration-primary" : ''}`;
@@ -10,9 +10,9 @@ const Footer = () => {
         <footer className="bg-secondary px-[5em] pt-[4em] pb-[2em] grid divide-y-1 divide-primary/20 items-start    ">
             <div className='flex justify-between pb-[3em]'>
                 <div className='flex flex-col gap-[2em]'>
-                    <a href="/" className='text-5xl brand-logo'>
+                    <Link to="/" className='text-5xl brand-logo'>
                         <span aria-label='logo-name'>bloom&breath</span>
-                    </a>
+                    </Link>
 
                     <div className='text-[15px]'>
                         <p>A little closer to nature.</p>
